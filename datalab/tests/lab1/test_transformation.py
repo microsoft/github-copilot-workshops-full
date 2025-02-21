@@ -8,8 +8,7 @@ def spark():
         .getOrCreate()
 @pytest.fixture(scope="module")
 def transformed_df(spark):
-    # Load the transformed dataset
-    df = spark.read.csv(r"C:\Users\alfonsod\OneDrive - Microsoft\Documents\02. Tools & Code\Code\ghcopilot-datatransformation-lab\datasets\transformed_2021.csv", header=True)
+    df = spark.read.csv("datasets/transformed_2021.csv", header=True)
     return df
 def test_schema(transformed_df):
     expected_schema = ["OrderID", "OrderLine", "OrderDate", "CustomerName", "Email", "Quantity", "Price", "Tax", "ProductName", "ProductDetails"]
