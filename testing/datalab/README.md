@@ -1,126 +1,98 @@
-# Github Copilot Data Transformation and Testing Labs
+# GitHub Data Transformation and Testing Lab
 
-## Lab Explanation
+## Pre-requisites
 
-This labs demonstrates the process of data transformation using PySpark and validates the transformations using PyTest using Github Copilot throughout the process. The demo dataset provided by the financial team contains order details for the year 2021 but without relevant information such as headers or explanation of the data (to be obtained by GH Copilot during the code creation process). The goal is to perform various data transformations and ensure the integrity of the transformed data using Github Copilot, making the process simpler and reducing code creation times.
+- [Visual Studio Code](https://code.visualstudio.com/) or any other editor that supports GitHub Copilot.
+- [GitHub Copilot](https://copilot.github.com/) extensions installed.
+- [Java SDK v21](https://www.oracle.com/java/technologies/downloads/archive/) 
+- [Spark Hadoop](https://spark.apache.org/docs/latest/api/python/getting_started/install.html) or use 'pip install pyspark'. 
+- [PyTest](https://pypi.org/project/pytest/) or install using 'pip install pytest'.
+- [Jupyter Notebook Extension](https://code.visualstudio.com/docs/datascience/jupyter-notebooks)
+
+## Lab Overview
+
+In this lab, you will perform data transformations using PySpark and validate these transformations using PyTest. You will also adapt the transformations to a Medallion data architecture. The goal is to understand the process of data transformation and testing, and to adapt the transformations to fit a specific data architecture. The entire lab will be done using GitHub Copilot, and you will use different prompts created by the user to guide the process.
 
 ## Situation
 
-The financial team has provided a dataset named `2021.csv` and requires us to perform various data transformations and testing operations on these transformations. The transformations include splitting the `Product` column into `ProductName` and `ProductDetails`, and validating the transformed data using PyTest.
+You have been provided with a dataset named `2021.csv` by the financial team without any information, headers, etc. in the dataset. Your task is to perform various data transformations on this dataset to make it business-valid, and to validate the data transformations. In addition, you will adapt the transformations to a Medallion data architecture.
 
-## Lab 1 - Data transformation and testing using GH Copilot
+## Lab 1 - Data Transformation and Testing
 
-1. **Data Transformation:**
-   ```
-   The financial team has provided a dataset named 2021.csv and requires us to perform various data transformations and testing operations on these transformations.Project requirements:
+### Data Transformation
 
-   Data Transformation:
+1. Load the dataset using PySpark.
+2. Perform necessary data transformations based on your analysis of the data using Github Copilot.
+3. Execute data transformations, check the transformations performed and save the transformed dataset as a new dataset.
 
-   - Use PySpark to load and transform the dataset.
-   - Implement necessary data transformations code based on your analysis of the data.
-   ```
+### Data Transformation Testing
 
-2. **Data Transformation Testing:**
-   ```
-   The next phase is to check the data transformation performed, so generate with pytest a code to validate this data transformation.
-   ```
+1. Use Github Copilot to create PyTest code and validate previously performed data transformations.
+2. Ensure the transformed dataset meets the expected criteria and check the new dataset file created.
 
-3. **Jupyter Notebook Creation:**
-   ```
-   We will generate a Jupyter Notebook with the transformations and tests. Detail it step by step with detailed code comments so that the Data team can explain it in detail to Finance.
-   ```
+**Fix and mitigate the different bugs you have using Github Copilot!**
+
+### Jupyter Notebook Creation
+
+1. Create a Jupyter Notebook using Github Copilot detailing the transformations and tests.
+2. Include detailed code comments to explain each step.
+3. Run the Jupyter Notebook.
 
 ## Lab 2 - Medallion Workflow
 
-It seems that our manager was happy with the code used, but it does not fit with the data transformation architecture used by the company, which is Medallion. We are going to use Github Copilot to fix that!
+### Adapt to Medallion Architecture
 
-To adapt the transformations to a Medallion data transformation architecture, the following prompts were used:
+1. Adapt the transformations to a Medallion data architecture using Github Copilot.
+2. Separate the transformations into Bronze, Silver, and Gold layers.
+3. If Hadoop is available, use **parquet files** in silver and gold layer datasets.
 
-1. **Adapt to Medallion Architecture:**
-   ```
-   Reviewing the project, my manager wants to adapt the transformations to a Medallion data transformation architecture.
+### Split Transformation Code
 
-   For this, the raw data (2021.csv) will be the bronze layer, and the following transformations will be the Silver Layer and Gold Layer.
+1. Use Github Copilot to split the transformations into Bronze, Silver, and Gold layers code, creating new datasets in each step based on different transformation.
+3. Run the complete transformation code workflow: Bronze -> Silver, Silver -> Gold.
 
-   Adapt and transform the project to this architecture by creating the code you need, and separate the tests so that it tests on one side the transformations from bronze to silver, and from silver to gold.
-   ```
+### Split Test Code
 
-   If Hadoop is available, use **parquet file** in silver and gold layer datasets.
+1. Use Github Copilot to split the test code into separate scripts for testing Bronze to Silver and Silver to Gold transformations.
+2. Run the complete test code workflow: Bronze -> Silver, Silver -> Gold.
+3. Fix and mitigate each 
 
-2. **Split Transformation Code:**
-   ```
-   Split the code ‘transformation.py’ into 2 different codes for the transformation bronze to silver, and silver to gold, so that we can execute them at different stages of the pipeline.
-   ```
+### Jupyter Notebook Creation
 
-3. **Split Test Code:**
-   ```
-   Split the code ‘test_transformatons.py’ into 2 different codes for the test bronze to silver transformation, and silver to gold transformation, so that we can execute them at different stages of the pipeline.
-   ```
+1. Create a new Jupyter Notebook detailing the Medallion workflow.
+2. Include steps for Bronze to Silver transformation, testing, Silver to Gold transformation, and testing.
 
-3. **Jupyter Notebook Creation:**
-   ```
-   Create a detailed new Jupyter notebook using the following steps:
+**Fix and mitigate the different bugs you have using Github Copilot!**
 
-      1.Bronze to silver transformation.
-      2.Testing the bronze to silver transformation.
-      3.Silver to gold transformation.
-      4.Test the silver to gold transformation.
-      
-   Detailed information on all steps and comments.
-   ```
+# Files
 
+- `README.md`: Project explanation and instructions.
 
-## Files
+## Lab 1
+- `transformations.py`: PySpark code to load and transform the dataset.
+- `test_transformations.py`: PyTest code to validate the data transformation.
+- `transformations_and_tests.ipynb`: Jupyter Notebook detailing the transformations 
 
-- `transformations.py`: Contains the PySpark code to load and transform the dataset.
-- `test_transformations.py`: Contains the pytest code to validate the data transformation.
-- `bronze_to_silver.py`: Contains the PySpark code for the Bronze to Silver transformation.
-- `silver_to_gold.py`: Contains the PySpark code for the Silver to Gold transformation.
-- `test_bronze_to_silver.py`: Contains the pytest code to validate the Bronze to Silver transformation.
-- `test_silver_to_gold.py`: Contains the pytest code to validate the Silver to Gold transformation.
-- `transformations_and_tests.ipynb`: A Jupyter Notebook detailing the transformations and tests step by step.
-- `README.md`: This file, explaining the project, situation, and prompts used during the code creation.
+## Lab 2
+- `bronze_to_silver.py`: PySpark code for Bronze to Silver transformation.
+- `silver_to_gold.py`: PySpark code for Silver to Gold transformation.
+- `test_bronze_to_silver.py`: PyTest code to validate Bronze to Silver transformation.
+- `test_silver_to_gold.py`: PyTest code to validate Silver to Gold transformation.
+- `data_transformation_medallion.ipynb`: Jupyter Notebook detailing the transformations and tests step by step.
+
 
 ## How to Run
 
-## Lab 1 - Data transformation and testing using GH Copilot
+### Lab 1 - Data Transformation and Testing
 
-1. **Data Transformation:**
-   - Run `transformations.py` to load and transform the dataset.
-   
-        ```python transformation.py```
-   
-   - The transformed dataset will be saved as `transformed_2021.csv`.
+1. Run `transformations.py` to load and transform the dataset.
+2. Run `test_transformations.py` using PyTest to validate the data transformation.
+3. Open `transformations_and_tests.ipynb` in Jupyter Notebook to see the detailed steps and explanations.
 
-2. **Data Transformation Testing:**
-   - Run `test_transformations.py` using pytest to validate the data transformation.
+### Lab 2 - Medallion Workflow
 
-        ```pytest test_transformation.py```
-   
-   - Ensure that the transformed dataset is located at the specified path in the test file.
-
-3. **Jupyter Notebook:**
-   - Open `transformations_and_tests.ipynb` in Jupyter Notebook to see the detailed steps and explanations of the transformations and tests.
-
-## Lab 2 - Medallion Workflow
-
-1. **Medallion Workflow:**
-   - Run `bronze_to_silver.py` to transform the Bronze layer to the Silver layer.
-   
-        ```python bronze_to_silver.py```
-   
-   - Run `silver_to_gold.py` to transform the Silver layer to the Gold layer.
-   
-        ```python silver_to_gold.py```
-
-2. **Medallion Workflow Testing:**
-   - Run `test_bronze_to_silver.py` using pytest to validate the Bronze to Silver transformation.
-   
-        ```pytest test_bronze_to_silver.py```
-   
-   - Run `test_silver_to_gold.py` using pytest to validate the Silver to Gold transformation.
-   
-        ```pytest test_silver_to_gold.py```
-
-3. **Jupyter Notebook:**
-   - Open `transformations_and_tests.ipynb` in Jupyter Notebook to see the detailed steps and explanations of the transformations and tests.
+1. Run `bronze_to_silver.py` to transform the Bronze layer to the Silver layer.
+2. Run `silver_to_gold.py` to transform the Silver layer to the Gold layer.
+3. Run `test_bronze_to_silver.py` using PyTest to validate the Bronze to Silver transformation.
+4. Run `test_silver_to_gold.py` using PyTest to validate the Silver to Gold transformation.
+5. Open `data_transformation_medallion.ipynb` in Jupyter Notebook to see the detailed steps and explanations.
