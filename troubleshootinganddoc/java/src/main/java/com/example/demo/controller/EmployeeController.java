@@ -9,6 +9,9 @@ import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
+/**
+ * REST controller for managing employees.
+ */
 @RestController
 @RequestMapping("/api/employees")
 public class EmployeeController {
@@ -17,7 +20,11 @@ public class EmployeeController {
     @Autowired
     private EmployeeService employeeService;
 
-    // Get all employees
+    /**
+     * Get all employees.
+     * 
+     * @return a list of all employees
+     */
     @GetMapping
     public List<Employee> getAllEmployees() {
         logger.info("Entrada: GET /api/employees");
@@ -26,7 +33,12 @@ public class EmployeeController {
         return employees;
     }
 
-    // Get employee by ID
+    /**
+     * Get employee by ID.
+     * 
+     * @param id the ID of the employee
+     * @return the employee with the specified ID
+     */
     @GetMapping("/{id}")
     public Employee getEmployeeById(@PathVariable Long id) {
         logger.info("Entrada: GET /api/employees/{}", id);
@@ -35,7 +47,12 @@ public class EmployeeController {
         return employee;
     }
 
-    // Get employee by email
+    /**
+     * Get employee by email.
+     * 
+     * @param email the email of the employee
+     * @return the employee with the specified email
+     */
     @GetMapping("/email/{email}")
     public Employee getEmployeeByEmail(@PathVariable String email) {
         logger.info("Entrada: GET /api/employees/email/{}", email);
@@ -44,7 +61,12 @@ public class EmployeeController {
         return employee;
     }
 
-    // Create a new employee
+    /**
+     * Create a new employee.
+     * 
+     * @param employee the employee to create
+     * @return the created employee
+     */
     @PostMapping
     public Employee createEmployee(@RequestBody Employee employee) {
         logger.info("Entrada: POST /api/employees");
@@ -53,7 +75,13 @@ public class EmployeeController {
         return createdEmployee;
     }
 
-    // Update an existing employee
+    /**
+     * Update an existing employee.
+     * 
+     * @param id       the ID of the employee to update
+     * @param employee the updated employee data
+     * @return the updated employee
+     */
     @PutMapping("/{id}")
     public Employee updateEmployee(@PathVariable Long id, @RequestBody Employee employee) {
         logger.info("Entrada: PUT /api/employees/{}", id);
@@ -70,7 +98,11 @@ public class EmployeeController {
         return null;
     }
 
-    // Delete an employee
+    /**
+     * Delete an employee.
+     * 
+     * @param id the ID of the employee to delete
+     */
     @DeleteMapping("/{id}")
     public void deleteEmployee(@PathVariable Long id) {
         logger.info("Entrada: DELETE /api/employees/{}", id);
