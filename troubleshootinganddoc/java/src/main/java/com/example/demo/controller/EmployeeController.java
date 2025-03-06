@@ -17,6 +17,7 @@ public class EmployeeController {
     @Autowired
     private EmployeeService employeeService;
 
+    // Get all employees
     @GetMapping
     public List<Employee> getAllEmployees() {
         logger.info("Entrada: GET /api/employees");
@@ -25,6 +26,7 @@ public class EmployeeController {
         return employees;
     }
 
+    // Get employee by ID
     @GetMapping("/{id}")
     public Employee getEmployeeById(@PathVariable Long id) {
         logger.info("Entrada: GET /api/employees/{}", id);
@@ -33,6 +35,7 @@ public class EmployeeController {
         return employee;
     }
 
+    // Get employee by email
     @GetMapping("/email/{email}")
     public Employee getEmployeeByEmail(@PathVariable String email) {
         logger.info("Entrada: GET /api/employees/email/{}", email);
@@ -41,6 +44,7 @@ public class EmployeeController {
         return employee;
     }
 
+    // Create a new employee
     @PostMapping
     public Employee createEmployee(@RequestBody Employee employee) {
         logger.info("Entrada: POST /api/employees");
@@ -49,6 +53,7 @@ public class EmployeeController {
         return createdEmployee;
     }
 
+    // Update an existing employee
     @PutMapping("/{id}")
     public Employee updateEmployee(@PathVariable Long id, @RequestBody Employee employee) {
         logger.info("Entrada: PUT /api/employees/{}", id);
@@ -65,6 +70,7 @@ public class EmployeeController {
         return null;
     }
 
+    // Delete an employee
     @DeleteMapping("/{id}")
     public void deleteEmployee(@PathVariable Long id) {
         logger.info("Entrada: DELETE /api/employees/{}", id);
