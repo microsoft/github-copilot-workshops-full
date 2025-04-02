@@ -1,0 +1,71 @@
+# Java and Maven
+target/
+*.class
+*.jar
+*.war
+*.ear
+
+# Logs
+*.log
+logs/
+*.out
+
+# IDEs and Editors
+/.idea/
+/*.iml
+/.vscode/
+/*.swp
+*.sublime-workspace
+*.sublime-project
+
+# OS Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Spring Boot
+.env
+*.properties
+*.yml
+*.yaml
+
+# Test Reports
+/test-output/
+/surefire-reports/
+/jacoco.exec
+
+# Build Tools
+/.mvn/
+/mvnw
+/mvnw.cmd
+
+# Dependency Directories
+/node_modules/
+/bower_components/
+
+# IntelliJ IDEA
+.idea/
+*.iws
+*.ipr
+*.iml
+out/
+
+# Eclipse
+.project
+.classpath
+.settings/
+bin/
+
+# NetBeans
+/nbproject/private/
+/build/
+/dist/
+
+# VS Code
+.vscode/
+
+# MacOS
+*.DS_Store
+
+# Windows
+Thumbs.db
