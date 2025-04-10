@@ -113,5 +113,5 @@ Este documento describe los pasos realizados para construir la API de Pokémon d
 ```
 9. **Custom Instructions**:
 
-- Alternativamente se puede usar custom_instructions.md para crear cierto contetso para Copilot a la hora de pedirle acciones. Prueba a escribir que estructura quieres que tengan tus tests o cómo quieres que te comente las funcionalidades. Añade ejemplos si es necesario.
+- Alternativamente se puede usar custom_instructions.md para crear cierto contexto para Copilot a la hora de pedirle acciones. Prueba a escribir qué estructura quieres que tengan tus tests o cómo quieres que te comente las funcionalidades. Añade ejemplos si es necesario.
 
