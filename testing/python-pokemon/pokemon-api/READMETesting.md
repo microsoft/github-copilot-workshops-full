@@ -46,6 +46,7 @@ Este documento describe los pasos realizados para construir la API de Pokémon d
      ```
      [Chat Edits] Crea una aplicacion de Pokemon que tenga unos nombres de Pokemon y su tipo. Quiero que sea una API REST ("pokemon-api") en Python usando la libreria FastApi, y que tenga un backend ("app") con operaciones CRUD. En la carpeta llamada "app" quiero tener un fichero app.py, models.py, requirements.txt, routes.py y un init_.py. Crea los ficheros vacios en cuanto a funcionalidades.
      ```
+     -  Se puede usar custom_instructions.md para crear cierto contexto para Copilot a la hora de pedirle acciones. Prueba a escribir qué estructura quieres que tengan tus tests o cómo quieres que te comente las funcionalidades. Añade ejemplos si es necesario.
 
 3. **Instalar dependencias**:
    - Crear un archivo `requirements.txt` con las dependencias necesarias, en este caso:
@@ -111,7 +112,5 @@ Este documento describe los pasos realizados para construir la API de Pokémon d
  ```
      [Chat Edits] Crea un readme.md que contenga informacion técnica de la aplicacion, una descripcion de las rutas y los test, del modelo, etc...
 ```
-9. **Custom Instructions**:
 
-- Alternativamente se puede usar custom_instructions.md para crear cierto contexto para Copilot a la hora de pedirle acciones. Prueba a escribir qué estructura quieres que tengan tus tests o cómo quieres que te comente las funcionalidades. Añade ejemplos si es necesario.
 
