@@ -100,15 +100,18 @@ Este documento describe los pasos realizados para construir la API de Pokémon d
      curl -X GET http://127.0.0.1:8000/pokemon/1
      ```
 
-6. **Testear las rutas**:
+7. **Testear las rutas**:
    - Ejecutar las pruebas unitarias con `pytest`:
      ```bash
      pytest app/test_routing.py
      ```
 
-6. **Crear documentacion**:
+8. **Crear documentacion**:
 
  ```
      [Chat Edits] Crea un readme.md que contenga informacion técnica de la aplicacion, una descripcion de las rutas y los test, del modelo, etc...
 ```
+9. **Custom Instructions**:
+
+- Alternativamente se puede usar custom_instructions.md para crear cierto contetso para Copilot a la hora de pedirle acciones. Prueba a escribir que estructura quieres que tengan tus tests o cómo quieres que te comente las funcionalidades. Añade ejemplos si es necesario.
 
