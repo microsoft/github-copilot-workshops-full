@@ -1,0 +1,5 @@
+Date,AveragePrice,TotalVolume,Region,Type
+2023-01-01,1.25,15000,California,Organic
+2023-01-02,1.30,16000,New York,Conventional
+2023-01-03,1.20,14000,Texas,Organic
+2023-01-04,1.50,17000,California,Conventional
