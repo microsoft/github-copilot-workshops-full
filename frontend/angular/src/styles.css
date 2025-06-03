@@ -1,0 +1,116 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+/* Responsive layout improvements */
+body,
+html {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: #fafafa;
+}
+
+body {
+    background: #f4f6fb;
+    font-family: var(--font-family, 'Segoe UI', Arial, sans-serif);
+    margin: 0;
+    min-height: 100vh;
+}
+
+main {
+    min-height: 80vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.mat-card {
+    margin: 2rem auto;
+    max-width: 800px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.p-card {
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 24px 0 rgba(60, 72, 88, 0.08);
+    background: #f8fafc;
+}
+
+.mat-toolbar {
+    background: #388e3c;
+    color: #fff;
+}
+
+.p-toolbar {
+    border-radius: 1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 12px 0 rgba(60, 72, 88, 0.10);
+}
+
+.p-float-label input {
+    border-width: 2px;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    font-size: 1.1rem;
+    background: #fff;
+}
+
+.p-float-label label {
+    font-weight: 600;
+    color: var(--primary-color, #2196f3);
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+.bg-primary-50 {
+    background: #e3f2fd !important;
+}
+
+.p-table {
+    border-radius: 1rem;
+    overflow: hidden;
+    background: #fff;
+}
+
+.p-datatable-sm th,
+.p-datatable-sm td {
+    font-size: 1.05rem;
+    padding: 0.7rem 1.2rem;
+}
+
+.p-datatable-striped tbody tr:nth-child(even) {
+    background: #f4f6fb;
+}
+
+.p-message {
+    margin-top: 1.5rem;
+}
+
+@media (max-width: 700px) {
+    .mat-card {
+        margin: 1rem;
+        padding: 0.5rem;
+    }
+
+    .mat-toolbar {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .p-card {
+        padding: 0.5rem;
+    }
+
+    .p-float-label {
+        width: 100% !important;
+    }
+
+    .table-container {
+        overflow-x: auto;
+    }
+}

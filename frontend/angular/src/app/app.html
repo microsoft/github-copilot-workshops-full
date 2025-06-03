@@ -1,0 +1,65 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<p-toolbar class="mb-3 shadow-2 border-round"
+  [ngStyle]="{'background': 'var(--primary-color)', 'color': 'var(--primary-color-text)'}">
+  <div class="p-toolbar-group-left">
+    <i class="pi pi-apple mr-2" style="font-size:2rem;"></i>
+    <span style="font-size:2rem;font-weight:600;letter-spacing:1px;">Avocado Prices</span>
+  </div>
+</p-toolbar>
+<main>
+  <p-card class="w-full md:w-10 lg:w-8 mx-auto mt-4 shadow-3 border-round-xl" [ngStyle]="{'background':'#f8fafc'}">
+    <div class="flex flex-column align-items-center gap-4">
+      <app-avocado-chart [data]="filteredPrices()"></app-avocado-chart>
+      <div class="flex flex-wrap gap-4 justify-content-center w-full mb-4 p-3 border-round bg-primary-50 shadow-1"
+        style="max-width:600px;">
+        <span class="p-float-label w-12 md:w-5">
+          <input pInputText id="countryFilter" [(ngModel)]="countryFilter" placeholder="Country"
+            class="w-full border-primary" style="font-weight:500;" />
+          <label for="countryFilter" class="text-primary font-bold">Filter Country</label>
+        </span>
+        <span class="p-float-label w-12 md:w-5">
+          <input pInputText id="priceFilter" type="number" [(ngModel)]="priceFilter" placeholder="Price" step="0.01"
+            class="w-full border-primary" style="font-weight:500;" />
+          <label for="priceFilter" class="text-primary font-bold">Filter Price</label>
+        </span>
+      </div>
+      <div class="table-container w-full mt-2">
+        <p-table [value]="filteredPrices()"
+          class="p-datatable-sm p-datatable-striped p-datatable-gridlines border-round shadow-1"
+          [ngStyle]="{'width':'100%','background':'#fff'}">
+          <ng-template pTemplate="header">
+            <tr>
+              <th>Country</th>
+              <th>Price (USD)</th>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-price>
+            <tr>
+              <td>{{ price.country }}</td>
+              <td>{{ price.price | number: '1.2-2' }}</td>
+            </tr>
+          </ng-template>
+        </p-table>
+        <p-progressSpinner *ngIf="loading"
+          [style]="{width: '40px', height: '40px', margin: '2rem auto', display: 'block'}"></p-progressSpinner>
+        <p-message *ngIf="error" severity="error" text="{{ error }}"></p-message>
+      </div>
+    </div>
+  </p-card>
+</main>
+
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->

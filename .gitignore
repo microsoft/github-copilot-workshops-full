@@ -40,3 +40,27 @@ Thumbs.db
 *.swp
 *.swo
 *.log
+
+# Angular
+*.js
+*.js.map
+/node_modules/
+/dist/
+/.angular/
+/.angular/
+/.angular/cache
+coverage/
+
+# Node
+/node_modules
+npm-debug.log
+yarn-error.log
+
+# Miscellaneous
+/.angular/cache
+.sass-cache/
+/connect.lock
+/coverage
+/libpeerconnection.log
+testem.log
+/typings
